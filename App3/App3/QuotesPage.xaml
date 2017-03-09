@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.QuotesPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+      iOS="20, 20, 20, 20"
+      Android="20, 30, 20, 20"
+      WinPhone="20, 40, 20, 20" />
+  </ContentPage.Padding>
+  <StackLayout>
+    <Button x:Name="NextButton" Text="Next" Clicked="NextButton_OnClicked"></Button>
+    <Label x:Name="FontSizeLabel" BindingContext="{x:Reference FontSizeSlider}" Text="{Binding Value, StringFormat='Font size: {0}'}"></Label>
+    <Slider x:Name="FontSizeSlider" Value="16" Maximum="50" Minimum="16"></Slider>
+    <Label x:Name="QuoteLabel" Text="" BindingContext="{x:Reference FontSizeSlider}" FontSize="{Binding Value}"></Label>
+  </StackLayout>
+</ContentPage>
